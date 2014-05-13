@@ -1,3 +1,5 @@
+$("#saveEdit").hide();
+
 //make html class resizable, jquery resizable 
 $(function() {
     	$( ".resizable" ).resizable();
@@ -30,20 +32,23 @@ $("#create").click(function(){
 });
 
 $("#editButton").click(function(){
+		$("#saveEdit").show();
 		$("div").each(function(){
 			if($(this).hasClass("autogen")){
 				$text = $(this).text();
-				$(this).empty();
+				$(this).text("");
 				$(this).append("<textarea id='textbox' style='height:80%;width:100%;vertical-align:top;'>"+$.trim($text)+"</textarea>");
 			};	
 		}); 
 });
 
-$("#save").click(function(){
+$("#saveEdit").click(function(){
 			$("div").each(function(){
-				$text = $("#textbox").val();
-				$("#container textarea").remove();
-				$("#container #save").remove();
-				$("#container").text($text);
+				if($(this).hasClass("autogen")){
+				$text = $("textarea").val();
+				$(this > "textarea").remove();
+				$(this).text($text);
+				};
 			});
+			$("#saveEdit").hide();
 });

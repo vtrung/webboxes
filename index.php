@@ -16,6 +16,7 @@
 	<button id="testButton"> SAVE </button>
 	<button id="create">Create</button>
 	<button id="editButton">Edit</button>
+	<button id="saveEdit">Save Edit</button>
 	<div id='test'> Test Div </div>
 	<div id='container' class='box' style='opacity:1;height:400px;width:700px;'>
 	<?php
