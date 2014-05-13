@@ -26,4 +26,24 @@ $("#testButton").click(function(){
 $("#create").click(function(){
 	$("#test").text("Created"); 
 	$.post("create.php",{name:'new'}, function(){});
+	location.reload();
+});
+
+$("#editButton").click(function(){
+		$("div").each(function(){
+			if($(this).hasClass("autogen")){
+				$text = $(this).text();
+				$(this).empty();
+				$(this).append("<textarea id='textbox' style='height:80%;width:100%;vertical-align:top;'>"+$.trim($text)+"</textarea>");
+			};	
+		}); 
+});
+
+$("#save").click(function(){
+			$("div").each(function(){
+				$text = $("#textbox").val();
+				$("#container textarea").remove();
+				$("#container #save").remove();
+				$("#container").text($text);
+			});
 });

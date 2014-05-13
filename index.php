@@ -12,9 +12,10 @@
 </head>
 
 <body>
-	<h1 id="ft">Let's us begin</h1>
+	<h1 id="ft">Let's begin</h1>
 	<button id="testButton"> SAVE </button>
 	<button id="create">Create</button>
+	<button id="editButton">Edit</button>
 	<div id='test'> Test Div </div>
 	<div id='container' class='box' style='opacity:1;height:400px;width:700px;'>
 	<?php
