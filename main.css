@@ -1,0 +1,41 @@
+/* Notes can be added with this syntax 
+
+# is for id
+. is for classes
+*/
+#heading{
+	height: 100px;
+	width: 100%;
+}
+
+body{
+	background-color: #D1DFE1;
+}
+
+#mainbody{
+	/*margin: 1em auto;*/
+}
+
+#bottomfooter {
+
+}
+
+.box {
+	background: white;
+	width: 25em;
+	/*position: absolute;
+	border-style: inset;
+	border-width: 4px;*/
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	opacity: 0.8;
+	float: left;
+}
+
+.titleHead {
+	width: 80%;
+}
+
