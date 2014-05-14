@@ -1,5 +1,6 @@
 <?php
-$con = mysqli_connect('localhost','root','root');
+include 'config.php';
+//$con = mysqli_connect('localhost','root','root');
 
 $sql="CREATE DATABASE boxsql;";
 if (mysqli_query($con,$sql)) {

@@ -1,4 +1,6 @@
-
+<?php 
+include "config.php";
+?>
 <html>
 <head>
 	<meta charset ="utf-8">
@@ -20,14 +22,18 @@
 	<div id='test'> Test Div </div>
 	<div id='container' class='box' style='opacity:1;height:400px;width:700px;'>
 	<?php
-		$connect = mysqli_connect('localhost','root','root','boxsql');
-		if (mysqli_connect_errno($connect))
+		//$connect = mysqli_connect('localhost','root','root','boxsql');
+		if (mysqli_connect_errno($con))
   		{
   			echo("Failed to connect to MySQL: " . mysqli_connect_error());
   		} else {
   			//echo("connected");
   		};
-		$result = mysqli_query($connect,"SELECT * FROM boxTable");
+  		$sql="USE boxsql;";
+  		if(mysqli_query($con, $sql)){
+  			//echo("use boxsql success");
+  		};
+		$result = mysqli_query($con,"SELECT * FROM boxTable");
 		while($row = mysqli_fetch_array($result)){
 			echo("<div style='position:absolute;top:".$row['Y']."px;left:".$row['X']."px;height:".$row['Height']."px;width:".$row['Width'].";'");
 			echo(" class='box draggable resizable autogen ui-widget-content' id=" . $row['BoxID'] . "> ");

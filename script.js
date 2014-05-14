@@ -75,7 +75,7 @@ $("#saveEdit").click(function(){
 			$("#saveEdit").hide();
 			saveit();
 			setTimeout(location.reload(),5000);
-			// location.reload(true);
+			//location.reload(true);
 });
 //
 
