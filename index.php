@@ -13,7 +13,7 @@
 
 <body>
 	<h1 id="ft">Let's begin</h1>
-	<button id="testButton"> SAVE </button>
+	<button id="saveButton"> SAVE </button>
 	<button id="create">Create</button>
 	<button id="editButton">Edit</button>
 	<button id="saveEdit">Save Edit</button>
@@ -31,7 +31,7 @@
 		while($row = mysqli_fetch_array($result)){
 			echo("<div style='position:absolute;top:".$row['Y']."px;left:".$row['X']."px;height:".$row['Height']."px;width:".$row['Width'].";'");
 			echo(" class='box draggable resizable autogen ui-widget-content' id=" . $row['BoxID'] . "> ");
-			echo($row['Content'] . " and the Height is " . $row['Height'] . "</div>");
+			echo($row['Content'] . "</div>");
 		};
 	?>
 	</div>
