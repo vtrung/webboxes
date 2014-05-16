@@ -15,10 +15,10 @@ include "config.php";
 
 <body>
 	<h1 id="ft">Let's begin</h1>
-	<button id="saveButton"> SAVE </button>
-	<button id="create">Create</button>
-	<button id="editButton">Edit</button>
-	<button id="saveEdit">Save Edit</button>
+	<button id="saveButton"> Save Configurations </button>
+	<button id="create">Create New Box</button>
+	<button id="editButton">Edit Content</button>
+	<button id="saveEdit">Save Content</button>
 	<div id='test'> Test Div </div>
 	<div id='container' class='box' style='opacity:1;height:400px;width:700px;'>
 	<?php
@@ -29,7 +29,7 @@ include "config.php";
   		} else {
   			//echo("connected");
   		};
-  		$sql="USE boxsql;";
+  		$sql="USE ".$dbname.";";
   		if(mysqli_query($con, $sql)){
   			//echo("use boxsql success");
   		};

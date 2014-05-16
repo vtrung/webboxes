@@ -2,7 +2,7 @@
 include 'config.php';
 //$con = mysqli_connect('localhost','root','root');
 
-$sql="CREATE DATABASE boxsql;";
+$sql="CREATE DATABASE ".$dbname.";";
 if (mysqli_query($con,$sql)) {
   echo "<br>Database boxsql created successfully";
 } else {
@@ -10,16 +10,16 @@ if (mysqli_query($con,$sql)) {
 }
 
 //Build boxTable table in database
-$sql="USE boxsql;";
+$sql="USE ".$dbname.";";
 
 if(mysqli_query($con,$sql)){
-	echo "<br>use boxsql success";
+	//echo "<br>use boxsql success";
 }else{
-	echo "<br>use boxsql failed";
-	echo "<br>Error USE boxsql: " . mysqli_error($con);
+	//echo "<br>use boxsql failed";
+	//echo "<br>Error USE boxsql: " . mysqli_error($con);
 };
 
-$sql="CREATE TABLE boxTable (";
+$sql="CREATE TABLE ".$tablename." (";
 $sql.="BoxID int NOT NULL AUTO_INCREMENT,";
 $sql.="Content text,";
 $sql.="X int,";
@@ -29,9 +29,9 @@ $sql.="Height int,";
 $sql.="PRIMARY KEY (BoxID));";
 
 if (mysqli_query($con,$sql)) {
-  echo "<br>Database boxsql created successfully";
+  //echo "<br>Database boxsql created successfully";
 } else {
-  echo "<br>Error creating table: " . mysqli_error($con);
+  //echo "<br>Error creating table: " . mysqli_error($con);
 }
 
 $con.close();

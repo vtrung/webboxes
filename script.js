@@ -38,13 +38,22 @@ function saveit(){
 $("#create").click(function(){
 	$("#test").text("Created"); 
 	$.post("create.php",{name:'new'}, function(){});
-	location.reload();
+	location.reload(true);
+});
+//
+
+//Create a new div for database
+$(".deletebutton").click(function(){
+	alert($(this).parent().attr('id'));
+	$.post("delete.php",{id:5}, function(){});
+	location.reload(true);
 });
 //
 
 //on click of save Button, post update to database the boxes positions and content
 $("#saveButton").click(function(){
 		$("div").each(saveit()); 
+		location.reload(true);
 });
 //
 
@@ -57,9 +66,17 @@ $("#editButton").click(function(){
 			if($(this).hasClass("autogen")){
 				$text = $(this).text();
 				$(this).text("");
-				$(this).append("<textarea id='textbox' style='height:80%;width:100%;vertical-align:top;'>"+$.trim($text)+"</textarea>");
-			};	
+				$(this).append("<textarea class='textbox' style='height:80%;width:100%;vertical-align:top;'>"+$.trim($text)+"</textarea>");
+				$(this).append("<button class='deletebutton'>delete</button>");	
+			};
+			$(".deletebutton").click(function(){
+			$.post("delete.php",{id:$(this).parent().attr('id')}, function(){});
+			location.reload(true);
+		});
+			
+				
 		}); 
+		
 });
 //
 
@@ -67,9 +84,10 @@ $("#editButton").click(function(){
 $("#saveEdit").click(function(){
 			$("div").each(function(){
 				if($(this).hasClass("autogen")){
-				$text = $("textarea").val();
-				$(this > "textarea").remove();
-				$(this).text($text);
+					$text = $("textarea").val();
+					$(this > "textarea").remove();
+					//$(this > "button").remove();
+					$(this).text($text);
 				};
 			});
 			$("#saveEdit").hide();
